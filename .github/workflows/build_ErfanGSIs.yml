@@ -21,7 +21,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
 
     steps:
@@ -56,10 +56,9 @@ jobs:
               zip -r final/GSI.zip ./*
        
        - name: Upload GSI to GofSent
-         run: |
-              cd $GITHUB_WORKSPACE/ErfanGSIs/output
+         run: 
               curl -sL https://git.io/file-transfer | sh
-              ./transfer wet ./final/GSI.zip
+              ./transfer gof final/GSI.zip
 
          
             
