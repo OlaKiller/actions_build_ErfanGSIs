@@ -50,9 +50,8 @@ jobs:
        
        - name: Zip GSI  
          run: |
-              cd $GITHUB_WORKSPACE/ErfanGSIs/output
               mkdir final
-              zip -r final/GSI.zip ./*
+              zip -r final/GSI.zip ./home/runner/work/actions_build_ErfanGSIs/ErfanGSIs/output
        
        - name: Upload GSI to GofSent
          run: 
